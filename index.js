@@ -45,6 +45,15 @@ cron.schedule('0 */10 * * * *', async () => {
     console.log(error);
   }
 });
+app.get('/', (_req, res) =>
+  res.status(200).json({
+    message: 'Welcome to Irembo notifier !',
+    data: {
+      message:
+        'I am not supposed to return anything really, but for our information this App is perfectly working and Luc will be getting sms every 10 minutes. Feel free to reach out to him on via email: jean.abayo@gmial.com',
+    },
+  })
+);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`app listening on port: ${PORT}`);
